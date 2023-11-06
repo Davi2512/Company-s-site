@@ -27,11 +27,13 @@ body {
 }
 
 .white-bg {
-  background-image: url(../img/white-bg.svg);
+  background-image: url(./white-bg.svg);
   color: var(--primary-color);
+  background-size: cover;
+  background-position: center center
 }
 .main-bg {
-  background-image: url('../img/main-bg.svg');
+  background-image: url('./main-bg.svg');
   background-size: cover;
   background-position: center center;
   color: var(--white-color);
