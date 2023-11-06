@@ -1,0 +1,507 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 
+  Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', 
+  sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: #EEEEEE;
+  line-height: 1.5;
+}
+
+:root {
+  --primary-color: #0A1128;
+  --white-color: #FFFFFF;
+  --light-gray-color: #EEEEEE;
+  --secondary-color: crimson;
+  --gap: 3rem;
+}
+
+.white-bg {
+  background-image: url(../img/white-bg.svg);
+  color: var(--primary-color);
+}
+.main-bg {
+  background-image: url('../img/main-bg.svg');
+  background-size: cover;
+  background-position: center center;
+  color: var(--white-color);
+}
+.main-content {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 10rem var(--gap);
+}
+
+.section {
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5 { 
+  font-family: system-ui, -apple-system, 
+  BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 
+  'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 4rem;
+}
+p {
+  margin-bottom: 4rem;
+  margin-top: 1rem;
+  font-size: 2rem;
+}
+h2 {
+  font-size: 6rem;
+}
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+ul {
+  list-style: none;
+}
+
+
+.menu {
+  position: fixed;
+  background-color: var(--white-color);
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  max-height: auto;
+}
+
+.menu-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav ul a {
+  padding: 2rem;
+  font-size: 2rem;
+  display: block;
+  position: relative;
+}
+.menu ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: 1rem;
+  left: 25%;
+  width: 0;
+  height: 0.2rem;
+  background: crimson;
+  transition: all 300ms ease-in-out;
+}
+.menu ul li a:hover::after {
+  width: 50%;
+}
+button::after {
+  content: '';
+  position: absolute;
+  bottom: 1rem;
+  left: 25%;
+  width: 0;
+  height: 0.2rem;
+  background: crimson;
+  transition: all 300ms ease-in-out;
+}
+button:hover::after {
+  width: 50%;
+}
+
+.spacing-menu {
+  height: 77px;
+}
+
+.content-intro {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: var(--gap);
+  color: var(--white-color);
+  min-height: 100vh;
+
+}
+
+.content-intro-text, .intro-img {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  max-width: 100%;
+  height: auto;
+}
+
+.content-intro-text {
+  position: relative;
+  top: -5rem;
+}
+.content-intro h2 {
+  font-size: 6rem;
+  margin-bottom: 5rem;
+  line-height: 1.2;
+}
+.content-intro p {
+  font-size: 2.2rem;
+  margin-bottom: 5rem;
+}
+.intro-img img {
+  max-width: 100%;
+  height: auto;
+  overflow: clip;
+}
+
+
+.logo-arruda img {
+  padding: 1rem;
+  margin: 0;
+  height: 5rem;
+  width: auto;
+}
+
+.top3-content {
+  min-height: 100vh;
+	display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+	justify-content: center;
+	max-width: 64rem;
+  text-align: center;
+}
+.grid-one-content {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  
+}
+
+.text-grid-one-content h2 {
+  margin-top: 20rem;
+}
+
+.text-grid-one p {
+  margin-bottom: 8rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap);
+  counter-reset: grid-counter;
+
+}
+
+.grid article h3 {
+  font-size: 3rem;
+  position: relative;
+  padding-left: 5rem;
+  padding-bottom: 2rem;
+}
+.grid article h3::before {
+  counter-increment: grid-counter;
+  content: counter(grid-counter);
+  position: absolute;
+  font-size: 8rem;
+  font-style: italic;
+  top: -4rem;
+  left: -2rem;
+  transform: rotate(5deg);
+
+}
+.grid article p {
+  font-size: 2rem;
+}
+
+.gallery-img {
+
+	max-width: 36rem;
+	max-height: 36rem;
+	overflow: hidden;
+
+}
+
+
+
+.gallery-img img {
+  transition: all 300ms ease-in-out;
+}
+.gallery-img img:hover {
+  transform: translate(-3%, 3%) scale(1.2) rotate(5deg);
+}
+
+
+.responsive-table {
+  overflow: hidden;
+	overflow-x: auto;
+}
+
+table {
+  border: 0.1rem solid var(--light-gray-color);
+	min-width: 360px;
+	width: 100%;
+	border-collapse: collapse;
+}
+table caption {
+	font-style: italic;
+	font-size: 2rem;
+	text-align: left;
+	margin-bottom: 1rem;
+}
+table td, table th {
+	white-space: nowrap;
+	padding: 1rem;
+	text-align: left;
+	border: 0.1rem solid var(--light-gray-color);
+}
+
+thead tr {
+  background: none;
+}
+tfoot tr td {
+  border-right: 1px solid var(--light-gray-color);;
+}
+
+
+fieldset {
+  border: none;
+  width: 100%;
+  display:block;
+}
+
+fieldset legend {
+  margin-bottom: -5rem;
+  font-size: 2.5rem;
+  font-style: italic;
+}
+
+.form-group-principal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.form-group-principal label {
+  font-size: 3rem; 
+  display: block; 
+}
+.form-group-principal input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  height: 5rem;
+  width: 40rem;
+  margin: 3rem;
+}
+fieldset button {
+  background: none;
+  padding: 1rem 2rem;
+  color: var(--white-color);
+  border: 0.5rem solid white;
+  font-size: 4rem;
+  margin-top: 5rem;
+}
+
+li button {
+  background-color: white;
+  border: 0.1rem solid black;
+  padding: 1.2rem;
+  font-size: large;
+}
+
+li button:hover {
+  transition: all 300ms ease-in-out;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  cursor: pointer;
+}
+li button img {
+  height: 1.8rem;
+  width: 1.8rem;
+  margin-right: 0.5rem;
+  
+}
+.footer-content {
+  background-color: var(--light-gray-color);
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 1rem;
+  max-width: 120rem;
+  max-height: 300px;
+}
+
+.endress-footer {
+  display: flex;
+  flex-direction: column;
+}
+.icon-list {
+  margin-bottom: 10rem;  
+  border-bottom: 1px solid black;
+  display: flex;
+  justify-content: center;
+}
+.footer-content div p {
+  position: relative;
+  top: -1rem;
+  padding: 0.5rem;
+  font-size: 2rem;
+  margin: 0.5rem;;
+}
+.endress-footer div a {
+  display: flex;
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+.endress-footer div {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  padding-top: 2rem;
+}
+.footer-button {
+  padding: 2.4rem;
+  font-size: 2rem;
+}
+
+.img-footer {
+  width: 3rem;
+  margin-right: 1rem;
+}
+
+.close-menu {
+  display: none;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: var(--white-color);
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: var(--primary-color);
+  transform: rotate(-90deg);
+  border: 0.1rem solid var(--primary-color);
+}
+
+@media (max-width: 800px) {
+  .content-intro, .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-img {
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%; 
+  }
+
+  .gallery-img img {
+    width: 100%;
+  }
+
+  .grid-one-content {
+    display: block;
+  }
+
+  .menu {
+    bottom: 0;
+    text-align: center;
+  }
+
+  .menu-content, .menu-content ul {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .menu-content {
+    height: 100vh;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .close-menu-label::after {
+    content: '☰';
+    position: fixed;
+    z-index: 2;
+    top: 2rem;
+    right: 2rem;
+    background: var(--primary-color);
+    color: var(--white-color);
+    font-size: 3rem;
+    line-height: 3rem;
+    width: 3rem;
+    height: 3rem;
+    text-align: center;
+    padding: 0.5rem;
+    cursor: pointer;
+  }
+
+  .close-menu:checked~.menu {
+    display: block;
+  }
+
+  .close-menu:checked~.close-menu-label::after {
+    content: 'X';
+  }
+
+  .menu-spacing {
+    display: none;
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+
+  h2 {
+    font-size: 3.6rem;
+  }
+
+  h3 {
+    font-size: 3.4rem;
+  }
+
+  h4 {
+    font-size: 3.2rem;
+  }
+
+  h5 {
+    font-size: 3rem;
+  }
+
+  h6 {
+    font-size: 2.8rem;
+  }
+  footer div {
+    display: flex;
+    flex-direction: column;
+  }
+  .menu-bottom {
+    display: flex;
+    flex-direction: column;
+  }
+
+}
+
+
